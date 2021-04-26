@@ -45,6 +45,17 @@ def create_initialize_gemfile()
   file.puts("gem 'dotenv'")
   file.close
   system("bundle install")
+  create_app()
+end
+
+### Sixth step : create app.rb file ###
+def create_app()
+  file=File.open("app.rb", "w")
+  file.puts("require 'bundler'")
+  file.puts("Bundler.require")
+  file.puts("")
+  file.puts("require_relative 'lib/...'")
+  file.close
   create_readme()
 end
 
